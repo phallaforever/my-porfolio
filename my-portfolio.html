@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hour Phalla | Inventory Officer & Systems Developer</title>
+<meta name="description" content="Hour Phalla, Inventory Officer in Phnom Penh. Warehouse control, Excel/Python reporting and custom inventory web tools.">
+<meta property="og:title" content="Hour Phalla | Inventory Officer & Systems Developer">
+<meta property="og:description" content="Inventory control, reporting automation and custom stock tools.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%2338BDF8'/%3E%3C/svg%3E">
+<meta property="og:image" content="profile.jpg">
+<meta property="og:image:alt" content="Portrait of Hour Phalla">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hour Phalla | Inventory Officer & Systems Developer">
+<meta name="twitter:description" content="Inventory control, reporting automation and custom stock tools.">
+<meta name="twitter:image" content="profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tailwind.css" onerror="window.__pfCssFail=1">
+<style>
+:root{--bg:248 250 252;--card:255 255 255;--line:226 232 240;--ink:15 23 42;--muted:71 85 105;--accent:3 105 161;--onaccent:255 255 255;--error:225 29 72;--ok:4 120 87}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:11 17 32;--card:19 28 49;--line:30 41 59;--ink:226 232 240;--muted:148 163 184;--accent:56 189 248;--onaccent:2 6 23;--error:251 113 133;--ok:52 211 153;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:11 17 32;--card:19 28 49;--line:30 41 59;--ink:226 232 240;--muted:148 163 184;--accent:56 189 248;--onaccent:2 6 23;--error:251 113 133;--ok:52 211 153;color-scheme:dark}
+html{scroll-padding-top:5rem;scrollbar-gutter:stable}
+body{background:rgb(var(--bg));color:rgb(var(--ink));padding-bottom:env(safe-area-inset-bottom,0px)}
+:focus-visible{outline:2px solid rgb(var(--accent));outline-offset:2px}
+.status-error{color:rgb(var(--error))}
+.text-ok{color:rgb(var(--ok))}
+nav{padding-top:env(safe-area-inset-top,0px);background:rgb(var(--bg) / .9);backdrop-filter:blur(12px);border-bottom:1px solid rgb(var(--line))}
+.card{transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:rgb(var(--accent))}
+.nav-link.on{color:rgb(var(--accent))}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease-out,transform .55s ease-out;transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;transform:none}
+@keyframes riseIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0}}
+@keyframes popIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes popOut{from{opacity:1;transform:none}to{opacity:0;transform:translateY(6px) scale(.98)}}
+#mobile-menu:not(.hidden),#app-error:not(.hidden){animation:riseIn .2s ease-out}
+#modal.flex{animation:fadeIn .18s ease-out}
+#modal.flex>div{animation:popIn .22s ease-out}
+#modal.closing{animation:fadeOut .15s ease-in forwards}
+#modal.closing>div{animation:popOut .15s ease-in forwards}
+@media print{.reveal{opacity:1!important;transform:none!important;transition:none!important}#app-error,#modal{display:none!important}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.animate-pulse{animation:none}html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}#mobile-menu,#app-error,#modal,#modal>div{animation:none!important}}
+</style>
+</head>
+<body class="font-sans antialiased">
+<noscript>
+  <div class="max-w-6xl mx-auto mt-20 px-6">
+    <div class="bg-card border border-line rounded-xl p-4 text-sm">This portfolio renders its content with JavaScript. Please enable JavaScript, or email <a href="mailto:hourphalla98@gmail.com" class="text-accent underline">hourphalla98@gmail.com</a>.</div>
+  </div>
+</noscript>
+<div id="app-error" role="alert" class="hidden fixed bottom-4 inset-x-4 z-50">
+  <div class="max-w-2xl mx-auto bg-card border border-rose-500/40 rounded-xl p-4 text-sm shadow-2xl flex items-start justify-between gap-4">
+    <p>Some content failed to load. Please refresh the page, or email <a href="mailto:hourphalla98@gmail.com" class="text-accent underline">hourphalla98@gmail.com</a>.</p>
+    <button id="app-error-close" type="button" aria-label="Dismiss error message" class="text-muted hover:text-ink text-sm font-mono px-2 py-1 rounded shrink-0">[x]</button>
+  </div>
+</div>
+
+<nav class="fixed top-0 inset-x-0 z-40">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#home" class="font-mono font-semibold text-lg flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-accent"></span>hourphalla<span class="text-accent">.dev</span></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted" id="nav-links"></div>
+    <button id="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 rounded-lg border border-line text-muted">
+      <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-5 space-y-1 border-t border-line bg-bg"></div>
+</nav>
+
+<header id="home" class="pt-32 pb-16 md:pt-40 px-6 max-w-6xl mx-auto">
+  <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+    <div class="max-w-2xl">
+      <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-mono text-xs mb-6">
+        <span>Inventory Officer @ Peng Huoth Group</span><span>•</span><span>Phnom Penh</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">I keep stock accurate, then build the tools that <span class="text-accent">track it</span>.</h1>
+      <p class="text-lg text-muted leading-relaxed mb-8">3+ years in warehouse control, FIFO/FEFO, serial tracking and stock reporting. I use Excel, Python and small web apps to make the work faster and easier to audit.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#projects" class="px-6 py-3 rounded-lg bg-accent text-onaccent font-semibold hover:opacity-90 transition">See my projects</a>
+        <a href="#contact" class="px-6 py-3 rounded-lg bg-card border border-line font-medium hover:border-accent transition">Contact me</a>
+      </div>
+    </div>
+    <div class="relative shrink-0">
+      <div class="w-56 h-56 md:w-72 md:h-72 rounded-2xl bg-card border-2 border-accent/30 p-2 overflow-hidden">
+        <img src="profile.jpg" alt="Hour Phalla" class="w-full h-full object-cover rounded-xl" onerror="this.onerror=null;var ph=this.nextElementSibling;this.remove();if(ph)ph.classList.remove('hidden')">
+        <div id="ph" role="img" aria-label="Hour Phalla" class="hidden w-full h-full rounded-xl bg-line/50 flex items-center justify-center text-5xl font-bold font-mono text-accent">HP</div>
+      </div>
+      <div class="absolute -bottom-3 -left-3 bg-card border border-line px-3.5 py-2 rounded-xl flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-xs font-mono">On-site • Phnom Penh</span>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-line" id="metrics"></div>
+</header>
+
+<main>
+<section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t border-line">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <div>
+      <h2 class="text-3xl font-bold tracking-tight">Featured systems & builds</h2>
+      <p class="text-muted mt-2">Open a preview to see each system’s workflow. Panels use sample data.</p>
+    </div>
+    <div class="flex flex-wrap gap-2" id="filters"></div>
+  </div>
+  <div class="grid md:grid-cols-2 gap-6" id="grid"></div>
+</section>
+
+<section id="skills" class="py-20 px-6 max-w-6xl mx-auto border-t border-line">
+  <h2 class="text-3xl font-bold tracking-tight mb-3">Skills & stack</h2>
+  <p class="text-muted mb-12">Warehouse discipline, analytical reporting and web development.</p>
+  <div class="grid md:grid-cols-3 gap-6" id="skill-grid"></div>
+</section>
+
+<section id="experience" class="py-20 px-6 max-w-6xl mx-auto border-t border-line">
+  <h2 class="text-3xl font-bold tracking-tight mb-12">Work experience</h2>
+  <ol class="space-y-10 border-l-2 border-line ml-3 pl-8" id="timeline"></ol>
+</section>
+
+<section id="education" class="py-20 px-6 max-w-6xl mx-auto border-t border-line">
+  <h2 class="text-3xl font-bold tracking-tight mb-10">Education & training</h2>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-card border border-line rounded-xl p-6">
+      <div class="flex justify-between mb-2"><span class="text-xs font-mono px-2.5 py-1 rounded bg-accent/10 text-accent">2021 – 2024</span><span class="text-xs font-mono text-ok">GPA 3.3 / 4.0</span></div>
+      <h3 class="text-xl font-bold">Bachelor of Business Administration</h3>
+      <p class="text-sm mt-1">National University of Management (NUM)</p>
+      <p class="text-muted text-xs mt-3">High school: Hun Sen Chompuvoin High School (2020 – 2021)</p>
+    </div>
+    <div class="bg-card border border-line rounded-xl p-6 space-y-4" id="courses"></div>
+  </div>
+</section>
+
+<section id="contact" class="py-20 px-6 max-w-6xl mx-auto border-t border-line">
+  <div class="bg-card border border-line rounded-2xl p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Get in touch</h2>
+      <p class="text-muted text-sm leading-relaxed mb-6">Open to inventory and supply chain roles, and to talks about stock systems, reporting automation or custom web tools.</p>
+      <p class="text-sm font-mono">Email: <a href="mailto:hourphalla98@gmail.com" class="text-accent hover:underline">hourphalla98@gmail.com</a></p>
+      <p class="text-sm font-mono mt-3">LinkedIn: <a href="https://www.linkedin.com/in/phalla-hour/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">linkedin.com/in/phalla-hour</a></p>
+      <p class="text-sm font-mono mt-3">GitHub: <a href="https://github.com/phallaforever" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">github.com/phallaforever</a></p>
+    </div>
+    <form id="cform" class="space-y-4">
+      <div><label for="n" class="block text-xs font-mono text-muted mb-1.5">Your name</label>
+        <input id="n" required aria-describedby="form-hint form-status" class="w-full px-4 py-2.5 rounded-lg bg-bg border border-line text-sm focus:border-accent"></div>
+      <div><label for="m" class="block text-xs font-mono text-muted mb-1.5">Message</label>
+        <textarea id="m" rows="4" required aria-describedby="form-hint form-status" class="w-full px-4 py-2.5 rounded-lg bg-bg border border-line text-sm focus:border-accent"></textarea></div>
+      <button class="w-full py-3 rounded-lg bg-accent text-onaccent font-semibold text-sm hover:opacity-90 transition">Open in my email app</button>
+      <p id="form-status" role="status" aria-live="polite" class="hidden text-xs"></p>
+      <p id="form-hint" class="text-xs text-muted">This opens your email app with the message ready to send.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="py-8 px-6 border-t border-line text-center text-xs font-mono text-muted">© 2026 Hour Phalla. Phnom Penh, Cambodia.</footer>
+
+<div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+  <div role="dialog" aria-modal="true" aria-labelledby="m-title" tabindex="-1" class="bg-card border border-accent/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="flex items-center justify-between px-6 py-4 border-b border-line">
+      <span id="m-tag" class="text-xs font-mono text-accent"></span>
+      <button id="m-close" type="button" aria-label="Close preview" class="text-muted hover:text-ink text-sm font-mono px-2 py-1 rounded">[Esc] Close</button>
+    </div>
+    <div class="p-6 md:p-8 space-y-6">
+      <div><h3 id="m-title" class="text-2xl font-bold"></h3><p id="m-sub" class="text-muted text-sm mt-2 leading-relaxed"></p></div>
+      <div class="bg-bg border border-line rounded-xl p-4 font-mono text-xs">
+        <div class="flex justify-between text-muted border-b border-line pb-2 mb-3"><span>ILLUSTRATIVE UI EXAMPLE</span><span>sample data</span></div>
+        <div id="m-mock" class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center"></div>
+        <p id="m-note" class="text-muted pt-3"></p>
+      </div>
+      <div><h4 class="text-xs font-mono uppercase tracking-wider text-accent mb-3">Key controls built</h4><ul id="m-feat" class="space-y-2 text-sm"></ul></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    if (window.__pfBoot) return;
+    const el = document.getElementById('app-error');
+    if (!el) return;
+    el.classList.remove('hidden');
+    const btn = document.getElementById('app-error-close');
+    if (btn) btn.onclick = () => el.classList.add('hidden');
+  }, 800);
+});
+</script>
+<script>
+const $ = id => document.getElementById(id);
+const safe = (label, fn) => {
+  try { fn(); }
+  catch (err) { console.error(`[portfolio] ${label} failed:`, err); showAppError(); }
+};
+function showAppError() {
+  const el = $('app-error');
+  if (el) el.classList.remove('hidden');
+}
+function hideAppError() {
+  const el = $('app-error');
+  if (el) el.classList.add('hidden');
+}
+window.addEventListener('error', showAppError);
+window.addEventListener('unhandledrejection', showAppError);
+const errClose = $('app-error-close');
+if (errClose) errClose.onclick = hideAppError;
+
+const NAV = [['projects','Projects'],['skills','Skills'],['experience','Experience'],['education','Education']];
+const METRICS = [['3+ yrs','Inventory & supply chain'],['FIFO / FEFO','Serial & batch traceability'],['Excel & Python','Reporting & automation'],['Custom IMS','Web apps & SQL ledgers']];
+const PROJECTS = [
+ {cat:'inventory',badge:'Inventory system',year:'2026',title:'StockCore IMS',
+  desc:'Inventory web app covering Purchase Request (PR#) reconciliation, Goods Received Notes (GRN), over-delivery checks and automatic SET-to-component expansion.',
+  stack:['HTML5 / Tailwind','JavaScript','REST API'],tag:'IMS • STOCK-IN & GRN',
+  sub:'Links purchase requests, vendor deliveries and kit-to-component stock updates to cut manual receiving errors.',
+  mock:[['PR# STATUS','PR-2026-089'],['OVER-DELIVERY','0 BLOCKED'],['SET EXPANSION','1 SET → 4 SKUs']],note:'> POST /api/grn/receive → creates GRN voucher, updates bin balances.',
+  feat:['Parent-SET to child-component expansion on receiving','Over-delivery blocking against open orders','GRN voucher with batch/serial verification log']},
+ {cat:'inventory',badge:'Warehouse audit',year:'2026',title:'LedgerCore & StockPulse Pro',
+  desc:'Mobile-friendly audit platform with an append-only transaction ledger, blind cycle counts, zone/pallet tracking and supervisor variance approval.',
+  stack:['Alpine.js','SQLite','Tailwind CSS'],tag:'AUDIT • LEDGER & CYCLE COUNT',
+  sub:'Spot-check and cycle count app that prevents silent stock edits through append-only entries and blind counting.',
+  mock:[['ZONE-A04','BLIND COUNT #14'],['COUNTER ENTRY','248 PCS'],['VARIANCE','-2 PCS · PENDING']],note:'Supervisor approves or rejects each variance before the ledger is adjusted.',
+  feat:['Blind count hides system quantities from counters','Two-step variance investigation and approval','Zone, rack and pallet-level traceability']},
+ {cat:'inventory',badge:'Manufacturing ERP',year:'2026',title:'AluFab OS & AluFrame FG',
+  desc:'Five-role manufacturing system for aluminum profile and window-frame production, with cut-list optimization and finished-goods valuation.',
+  stack:['React','PostgreSQL','RBAC'],tag:'ERP • 5-ROLE WORKFLOW',
+  sub:'Tracks aluminum from raw bar cutting to finished window-frame stock valuation.',
+  mock:[['CUT OPTIMIZATION','YIELD SHOWN'],['OFFCUT REUSE','TRACKED'],['FG VALUATION','ON QC SIGN-OFF']],note:'Roles: Sales, Engineering, Warehouse, Cutting Floor, QC/FG.',
+  feat:['Five-role access control','1D cutting-stock optimization to reduce scrap','Finished-goods valuation after QC sign-off']},
+ {cat:'automation',badge:'Reporting & Python',year:'2025 – 2026',title:'Supply Chain Reporting & Python Automation',
+  desc:'Daily, weekly and monthly stock summaries, serial-range validation scripts and replenishment dashboards in Excel (Power Query, Pivot, VBA) and Python.',
+  stack:['Excel / VBA','Python (pandas, openpyxl)'],tag:'ANALYTICS • EXCEL & PYTHON',
+  sub:'Operational reporting templates and scripts that validate serial ranges and summarize stock movement.',
+  mock:[['SERIAL CHECK','RANGES + DUPLICATES'],['KPI REPORT','XLSX EXPORT'],['REPLENISHMENT','AGING VIEW']],note:'$ python validate_serials.py --file daily_dispatch.xlsx',
+  feat:['Serial continuity and duplicate checks with pandas','Excel dashboards: Power Query, Pivot, XLOOKUP, VBA','Standard stock aging and replenishment reports']}
+];
+const SKILLS = [
+ ['01. Inventory & operations',['Stock control (FIFO / FEFO)','Order processing, returns & validation','Serial number & range verification','Discrepancy reconciliation & cycle counts','Replenishment & delivery coordination']],
+ ['02. Reporting & analysis',['Excel: Pivot, XLOOKUP, Power Query, VBA','Daily, weekly & monthly KPI reporting','Demand trend summaries','Python: pandas, openpyxl, sqlite3','Audit traceability']],
+ ['03. Web dev',['HTML5, Tailwind CSS, JavaScript, React','SQLite & PostgreSQL design','Hosting: Vercel, Netlify, Railway']]
+];
+const JOBS = [
+ {role:'Inventory Officer',org:'Peng Huoth Group • Full-time • Phnom Penh',date:'Jun 2026 – Present',now:1,
+  pts:['Manage raw materials and finished goods inventory across on-site warehouse operations.','Control receiving (GRN), issuance (GIN) and stock transfers to keep the ledger accurate.','Run cycle counts, investigate variances and streamline reporting with digital tools.']},
+ {role:'Ordering Service & Return Specialist / Assistant Reporting Analyst',org:'Cellcard – CamGSM PLC (via HRINC Agency) • Phnom Penh',date:'Mar 2025 – Jun 2026',
+  pts:['Supported order fulfillment, inventory control, stock movement and delivery coordination.','Verified stock transactions: serial range checks, condition validation, discrepancy reconciliation.','Prepared daily, weekly, monthly and ad hoc reports on stock, demand trends and KPIs.','Supported replenishment planning and system verification controls.']},
+ {role:'Operation Administration',org:'SpeedWind Distributions Co., Ltd • Phnom Penh',date:'Oct 2024 – Mar 2025',
+  pts:['Supported stock distribution to retailers, processed transfer records and monitored electronic stock (PENSONIC) and Cellcard products.','Closed inventory bins for USD and KHR cash and recorded daily delivery petty cash.']},
+ {role:'Stock Assistant / Warehouse Officer',org:'Borey Blue Diamond • Phnom Penh',date:'Nov 2022 – Apr 2023',
+  pts:['Checked vendor deliveries against invoices, inspected for damage or shortage, coordinated orders and entered stock statements.']},
+ {role:'Stock Assistant',org:'Lion Tool • Phnom Penh',date:'Apr 2022 – Aug 2022',
+  pts:['Stock counting, order picking verification and system entry.']},
+ {role:'National Census Volunteer',org:'National Census Program, Cambodia',date:'Mar 2019',
+  pts:['Household data collection and survey verification.']}
+];
+const COURSES = [['Python for Beginners','Coderistic','Jun – Aug 2025'],['General English (Level 06–08)','Study Squad','Jan 2024 – Jan 2025'],['Basic Coding: HTML, CSS, JavaScript','TFDev','Jan – Feb 2023']];
+
+// Nav
+const menu = $('mobile-menu'), btn = $('menu-btn');
+function setMenu(open) {
+  if (!menu || !btn) return;
+  menu.classList.toggle('hidden', !open);
+  btn.setAttribute('aria-expanded', open);
+  const openIcon = $('menu-open-icon'), closeIcon = $('menu-close-icon');
+  if (openIcon) openIcon.classList.toggle('hidden', open);
+  if (closeIcon) closeIcon.classList.toggle('hidden', !open);
+}
+safe('navigation', () => {
+  $('nav-links').innerHTML = NAV.map(([id,t])=>`<a href="#${id}" class="nav-link hover:text-accent transition">${t}</a>`).join('') +
+    `<a href="#contact" class="nav-link px-4 py-2 rounded-lg bg-accent/10 text-accent border border-accent/30 hover:bg-accent hover:text-onaccent transition">Contact</a>`;
+  menu.innerHTML = [...NAV,['contact','Contact']].map(([id,t])=>`<a href="#${id}" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-accent">${t}</a>`).join('');
+  btn.onclick = () => setMenu(menu.classList.contains('hidden'));
+  menu.onclick = e => { if (e.target.closest('a')) setMenu(false); };
+});
+
+// Resize: reset menu when crossing to desktop layout
+safe('resize', () => {
+  const mq = window.matchMedia('(min-width: 768px)');
+  const sync = () => { if (mq.matches) setMenu(false); };
+  if (typeof mq.addEventListener === 'function') mq.addEventListener('change', sync);
+  else if (typeof mq.addListener === 'function') mq.addListener(sync);
+  sync();
+});
+
+// Active nav on scroll
+safe('scroll spy', () => {
+  if (!('IntersectionObserver' in window)) return;
+  const links = [...document.querySelectorAll('.nav-link')];
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id));
+  }), {rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('main section').forEach(s => io.observe(s));
+});
+
+// Metrics, skills, timeline, courses
+safe('metrics', () => {
+  $('metrics').innerHTML = METRICS.map(([a,b])=>`<div><div class="text-xl md:text-2xl font-bold font-mono">${a}</div><div class="text-sm text-muted mt-1">${b}</div></div>`).join('');
+});
+safe('skills', () => {
+  $('skill-grid').innerHTML = SKILLS.map(([h,l])=>`<div class="bg-card border border-line rounded-xl p-6"><h3 class="text-lg font-semibold text-accent font-mono mb-4">${h}</h3><ul class="space-y-2.5 text-sm">${l.map(i=>`<li>• ${i}</li>`).join('')}</ul>
+    </div>`).join('');
+  $('skill-grid').insertAdjacentHTML('beforeend',`<div class="md:col-span-3 bg-card border border-line rounded-xl p-6 text-sm"><span class="font-mono text-accent">Languages:</span> Khmer (native) · English (pre-intermediate, General English Level 06–08)</div>`);
+});
+safe('timeline', () => {
+  $('timeline').innerHTML = JOBS.map(j=>`<li class="relative">
+  <span class="w-3.5 h-3.5 rounded-full ${j.now?'bg-accent':'bg-muted'} absolute -left-[39px] top-1.5 ring-4 ring-bg"></span>
+  <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="text-lg md:text-xl font-bold">${j.role}</h3>
+  <span class="text-xs font-mono px-2.5 py-1 rounded ${j.now?'bg-accent/10 text-accent border border-accent/20':'bg-line/60 text-muted'}">${j.date}</span></div>
+  <div class="text-sm font-medium mb-3 ${j.now?'text-accent':''}">${j.org}</div>
+  <ul class="text-muted text-sm leading-relaxed space-y-1.5">${j.pts.map(p=>`<li>• ${p}</li>`).join('')}</ul></li>`).join('');
+});
+safe('courses', () => {
+  $('courses').innerHTML = COURSES.map(([t,s,d],i)=>`<div class="${i?'border-t border-line pt-3':''}"><div class="flex justify-between gap-2 text-xs font-mono text-accent"><span>${t}</span><span class="shrink-0">${d}</span></div><div class="text-sm font-medium">${s}</div></div>`).join('');
+});
+
+// Projects + filter
+const grid = $('grid');
+safe('projects', () => {
+  grid.innerHTML = PROJECTS.map((p,i)=>`<article class="card bg-card border border-line rounded-xl p-6 flex flex-col justify-between" data-cat="${p.cat}">
+  <div><div class="flex justify-between mb-4"><span class="px-2.5 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">${p.badge}</span><span class="text-xs font-mono text-muted">${p.year}</span></div>
+  <h3 class="text-xl font-bold mb-2">${p.title}</h3><p class="text-muted text-sm leading-relaxed mb-4">${p.desc}</p></div>
+  <div><div class="flex flex-wrap gap-2 mb-5">${p.stack.map(s=>`<span class="text-xs font-mono px-2 py-1 rounded bg-line/60">${s}</span>`).join('')}</div>
+  <button type="button" data-i="${i}" class="open text-accent hover:underline text-sm font-medium">Interactive preview →</button></div></article>`).join('');
+  const FILTERS = [['all','All'],['inventory','Inventory & ERP'],['automation','Data & automation']];
+  $('filters').innerHTML = FILTERS.map(([k,t],i)=>`<button type="button" data-f="${k}" class="f px-4 py-1.5 rounded-lg text-sm font-medium border ${i?'bg-card border-line text-muted':'bg-accent border-accent text-onaccent'} transition">${t}</button>`).join('');
+  $('filters').onclick = e => {
+    const b = e.target.closest('.f'); if (!b) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.f').forEach(x => x.className = 'f px-4 py-1.5 rounded-lg text-sm font-medium border bg-card border-line text-muted transition');
+    b.className = 'f px-4 py-1.5 rounded-lg text-sm font-medium border bg-accent border-accent text-onaccent transition';
+    grid.querySelectorAll('article').forEach(a => {
+      const show = b.dataset.f === 'all' || a.dataset.cat === b.dataset.f;
+      a.style.display = show ? 'flex' : 'none';
+      if (show && !reduce) {
+        a.classList.add('in');
+        a.style.animation = 'none';
+        void a.offsetWidth;
+        a.style.animation = 'fadeIn .3s ease-out';
+      }
+    });
+  };
+});
+
+// Motion: staggered scroll reveal
+safe('motion', () => {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const groups = [
+    document.querySelectorAll('#home .max-w-2xl > *'),
+    document.querySelectorAll('#home .relative.shrink-0'),
+    document.querySelectorAll('#metrics > div'),
+    document.querySelectorAll('main section > h2'),
+    document.querySelectorAll('#projects .mb-12 > div'),
+    document.querySelectorAll('#grid > article'),
+    document.querySelectorAll('#skill-grid > div'),
+    document.querySelectorAll('#timeline > li'),
+    document.querySelectorAll('#education .grid > div'),
+    document.querySelectorAll('#contact > div')
+  ];
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in');
+      io.unobserve(en.target);
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
+  groups.forEach(nodes => [...nodes].forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.setProperty('--d', Math.min(i, 4) * 70 + 'ms');
+    io.observe(el);
+  }));
+});
+
+// Modal (focus managed)
+const modal = $('modal'), dlg = modal && modal.firstElementChild;
+let last = null, modalCloseTimer = null;
+const supportsGutter = typeof CSS !== 'undefined' && CSS.supports && CSS.supports('scrollbar-gutter', 'stable');
+let scrollPad = 0;
+function lockScroll(){
+  if (document.body.style.overflow === 'hidden') return;
+  if (!supportsGutter) {
+    scrollPad = window.innerWidth - document.documentElement.clientWidth;
+    if (scrollPad > 0) {
+      document.body.style.paddingRight = scrollPad + 'px';
+      const nav = document.querySelector('nav');
+      if (nav) nav.style.paddingRight = scrollPad + 'px';
+      if (modal) modal.style.paddingRight = scrollPad + 'px';
+    }
+  }
+  document.body.style.overflow = 'hidden';
+}
+function unlockScroll(){
+  document.body.style.overflow = '';
+  if (!scrollPad) return;
+  document.body.style.paddingRight = '';
+  const nav = document.querySelector('nav');
+  if (nav) nav.style.paddingRight = '';
+  if (modal) modal.style.paddingRight = '';
+  scrollPad = 0;
+}
+function openModal(p){
+  if (!modal || !dlg || !p) return;
+  clearTimeout(modalCloseTimer);
+  modal.classList.remove('closing');
+  last = document.activeElement;
+  $('m-tag').textContent = p.tag; $('m-title').textContent = p.title; $('m-sub').textContent = p.sub; $('m-note').textContent = p.note;
+  $('m-mock').innerHTML = p.mock.map(([a,b])=>`<div class="bg-card border border-line rounded p-2.5"><div class="text-muted">${a}</div><div class="text-accent font-bold mt-1">${b}</div></div>`).join('');
+  $('m-feat').innerHTML = p.feat.map(f=>`<li>• ${f}</li>`).join('');
+  modal.classList.replace('hidden','flex');
+  lockScroll();
+  const closeBtn = $('m-close');
+  if (closeBtn) closeBtn.focus();
+}
+function closeModal(){
+  if (!modal || modal.classList.contains('hidden') || modal.classList.contains('closing')) return;
+  const finish = () => {
+    clearTimeout(modalCloseTimer);
+    modal.classList.remove('closing');
+    modal.classList.replace('flex','hidden');
+    unlockScroll();
+    if (last && typeof last.focus === 'function') last.focus();
+  };
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { finish(); return; }
+  modal.classList.add('closing');
+  const onEnd = e => {
+    if (e.target !== modal) return;
+    modal.removeEventListener('animationend', onEnd);
+    if (modal.classList.contains('closing')) finish();
+  };
+  modal.addEventListener('animationend', onEnd);
+  modalCloseTimer = setTimeout(() => { if (modal.classList.contains('closing')) finish(); }, 260);
+}
+safe('modal', () => {
+  if (grid) grid.onclick = e => {
+    const b = e.target.closest('.open'); if (!b) return;
+    const p = PROJECTS[Number(b.dataset.i)];
+    if (p) openModal(p);
+  };
+  const closeBtn = $('m-close');
+  if (closeBtn) closeBtn.onclick = closeModal;
+  modal.onclick = e => { if (e.target === modal) closeModal(); };
+  document.addEventListener('keydown', e => {
+    const open = !modal.classList.contains('hidden');
+    if (e.key === 'Escape') { if (open) closeModal(); setMenu(false); return; }
+    if (e.key === 'Tab' && open && dlg) {
+      const f = dlg.querySelectorAll('button, a[href], input, textarea, [tabindex]:not([tabindex="-1"])');
+      if (!f.length) return;
+      const first = f[0], lastEl = f[f.length - 1];
+      if (f.length === 1) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); lastEl.focus(); }
+      else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); first.focus(); }
+    }
+  });
+});
+
+// Contact: opens email app
+safe('contact form', () => {
+  const form = $('cform');
+  if (!form) return;
+  const nameEl = $('n'), msgEl = $('m');
+  const status = $('form-status'), hint = $('form-hint');
+  const showStatus = (msg, isError = false) => {
+    if (!status) return;
+    status.textContent = msg;
+    status.className = 'text-xs ' + (isError ? 'status-error' : 'text-muted');
+    if (hint) hint.classList.add('hidden');
+  };
+  [nameEl, msgEl].forEach(el => {
+    if (el) el.addEventListener('input', () => el.removeAttribute('aria-invalid'));
+  });
+  form.onsubmit = e => {
+    e.preventDefault();
+    const name = nameEl ? nameEl.value.trim() : '';
+    const message = msgEl ? msgEl.value.trim() : '';
+    if (!name || !message) {
+      if (nameEl) nameEl.setAttribute('aria-invalid', String(!name));
+      if (msgEl) msgEl.setAttribute('aria-invalid', String(!message));
+      const firstInvalid = !name ? nameEl : msgEl;
+      if (firstInvalid) firstInvalid.focus();
+      showStatus('Please add your name and a message.', true);
+      return;
+    }
+    showStatus('Opening your email app… If nothing opens, email hourphalla98@gmail.com.');
+    location.href = `mailto:hourphalla98@gmail.com?subject=${encodeURIComponent('Portfolio message from ' + name)}&body=${encodeURIComponent(message)}`;
+  };
+});
+window.__pfBoot = true;
+</script>
+</body>
+</html>
