@@ -144,7 +144,7 @@ nav{padding-top:env(safe-area-inset-top,0px);background:rgb(var(--bg) / .9);back
       <p class="text-sm font-mono mt-3">LinkedIn: <a href="https://www.linkedin.com/in/phalla-hour/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">linkedin.com/in/phalla-hour</a></p>
       <p class="text-sm font-mono mt-3">GitHub: <a href="https://github.com/phallaforever" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">github.com/phallaforever</a></p>
     </div>
-    <form id="cform" class="space-y-4">
+    <form id="cform" novalidate class="space-y-4">
       <div><label for="n" class="block text-xs font-mono text-muted mb-1.5">Your name</label>
         <input id="n" required aria-describedby="form-hint form-status" class="w-full px-4 py-2.5 rounded-lg bg-bg border border-muted text-sm focus:border-accent transition-colors duration-200"></div>
       <div><label for="m" class="block text-xs font-mono text-muted mb-1.5">Message</label>
@@ -461,6 +461,8 @@ safe('contact form', () => {
   if (!form) return;
   const nameEl = $('n'), msgEl = $('m');
   const status = $('form-status'), hint = $('form-hint');
+  const nameDiv = nameEl?.parentElement;
+  const msgDiv = msgEl?.parentElement;
   const showStatus = (msg, isError = false) => {
     if (!status) return;
     status.textContent = msg;
@@ -473,32 +475,72 @@ safe('contact form', () => {
     if (!input) return;
     input.style.border = hasError ? '2px solid rgb(var(--error))' : '1px solid rgb(var(--muted))';
     input.style.outline = 'none';
+    input.style.boxShadow = hasError ? '0 0 0 2px rgb(var(--error)/20)' : '';
     el.classList.toggle('has-error', hasError);
+  };
+  const createErrorMsg = (text) => {
+    const msg = document.createElement('p');
+    msg.className = 'text-red-400 text-xs mt-1.5';
+    msg.textContent = text;
+    return msg;
+  };
+  const removeErrorMsg = (parent) => {
+    const existing = parent.querySelector('.custom-error-msg');
+    if (existing) existing.remove();
   };
   [nameEl, msgEl].forEach(el => {
     if (el) el.addEventListener('input', () => {
       el.removeAttribute('aria-invalid');
       const parent = el.parentElement;
-      if (parent) setInputError(parent, false);
+      if (parent) {
+        removeErrorMsg(parent);
+        setInputError(parent, false);
+      }
+    });
+    el.addEventListener('blur', () => {
+      const val = el.value.trim();
+      const parent = el.parentElement;
+      if (!val) {
+        if (parent) {
+          removeErrorMsg(parent);
+          const msg = createErrorMsg(el === nameEl ? 'Please enter your name' : 'Please enter a message');
+          parent.appendChild(msg);
+          setInputError(parent, true);
+          el.setAttribute('aria-invalid', 'true');
+        }
+      }
     });
   });
   form.onsubmit = e => {
     e.preventDefault();
     const name = nameEl ? nameEl.value.trim() : '';
     const message = msgEl ? msgEl.value.trim() : '';
+    let hasError = false;
     if (!name || !message) {
       if (nameEl) {
-        nameEl.setAttribute('aria-invalid', String(!name));
-        setInputError(nameEl.parentElement, true);
+        if (!nameEl.value.trim()) {
+          removeErrorMsg(nameDiv);
+          const msg = createErrorMsg('Please enter your name');
+          nameDiv.appendChild(msg);
+          setInputError(nameDiv, true);
+          nameEl.setAttribute('aria-invalid', 'true');
+          hasError = true;
+        }
       }
       if (msgEl) {
-        msgEl.setAttribute('aria-invalid', String(!message));
-        setInputError(msgEl.parentElement, true);
+        if (!msgEl.value.trim()) {
+          removeErrorMsg(msgDiv);
+          const msg = createErrorMsg('Please enter a message');
+          msgDiv.appendChild(msg);
+          setInputError(msgDiv, true);
+          msgEl.setAttribute('aria-invalid', 'true');
+          hasError = true;
+        }
       }
-      const firstInvalid = !name ? nameEl : msgEl;
-      if (firstInvalid) firstInvalid.focus();
-      showStatus('Please add your name and a message.', true);
-      return;
+      if (hasError) {
+        showStatus('Please fill in all required fields.', true);
+        return;
+      }
     }
     showStatus('Opening your email app… If nothing opens, email hourphalla98@gmail.com.');
     location.href = `mailto:hourphalla98@gmail.com?subject=${encodeURIComponent('Portfolio message from ' + name)}&body=${encodeURIComponent(message)}`;
